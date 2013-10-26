@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		550174CC181C088D004FAC30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550174CB181C088D004FAC30 /* Foundation.framework */; };
+		550174CE181C088D004FAC30 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550174CD181C088D004FAC30 /* CoreGraphics.framework */; };
+		550174D0181C088D004FAC30 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550174CF181C088D004FAC30 /* UIKit.framework */; };
+		550174D6181C088D004FAC30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 550174D4181C088D004FAC30 /* InfoPlist.strings */; };
+		550174D8181C088D004FAC30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 550174D7181C088D004FAC30 /* main.m */; };
+		550174DC181C088D004FAC30 /* __AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 550174DB181C088D004FAC30 /* __AppDelegate.m */; };
+		550174DF181C088D004FAC30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550174DD181C088D004FAC30 /* Main.storyboard */; };
+		550174E4181C088D004FAC30 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 550174E3181C088D004FAC30 /* Images.xcassets */; };
+		550174EB181C088D004FAC30 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550174EA181C088D004FAC30 /* XCTest.framework */; };
+		550174EC181C088D004FAC30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550174CB181C088D004FAC30 /* Foundation.framework */; };
+		550174ED181C088D004FAC30 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550174CF181C088D004FAC30 /* UIKit.framework */; };
+		550174F5181C088D004FAC30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 550174F3181C088D004FAC30 /* InfoPlist.strings */; };
+		550174F7181C088D004FAC30 /* moodmapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 550174F6181C088D004FAC30 /* moodmapTests.m */; };
+		55017506181C0BBA004FAC30 /* ММFacebookLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55017505181C0BBA004FAC30 /* ММFacebookLoginViewController.m */; };
+		55017508181C10F9004FAC30 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55017507181C10F9004FAC30 /* FacebookSDK.framework */; };
+		5501750B181C2961004FAC30 /* ММFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5501750A181C2961004FAC30 /* ММFeedViewController.m */; };
+		5501750E181C3052004FAC30 /* ММRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5501750D181C3052004FAC30 /* ММRootTabBarController.m */; };
+		55017511181C44E3004FAC30 /* ММFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55017510181C44E3004FAC30 /* ММFeedCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		550174EE181C088D004FAC30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 550174C0181C088D004FAC30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 550174C7181C088D004FAC30;
+			remoteInfo = moodmap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		550174C8181C088D004FAC30 /* moodmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		550174CB181C088D004FAC30 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		550174CD181C088D004FAC30 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		550174CF181C088D004FAC30 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		550174D3181C088D004FAC30 /* moodmap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "moodmap-Info.plist"; sourceTree = "<group>"; };
+		550174D5181C088D004FAC30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		550174D7181C088D004FAC30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		550174D9181C088D004FAC30 /* moodmap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "moodmap-Prefix.pch"; sourceTree = "<group>"; };
+		550174DA181C088D004FAC30 /* __AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = __AppDelegate.h; sourceTree = "<group>"; };
+		550174DB181C088D004FAC30 /* __AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __AppDelegate.m; sourceTree = "<group>"; };
+		550174DE181C088D004FAC30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		550174E3181C088D004FAC30 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		550174E9181C088D004FAC30 /* moodmapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moodmapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		550174EA181C088D004FAC30 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		550174F2181C088D004FAC30 /* moodmapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "moodmapTests-Info.plist"; sourceTree = "<group>"; };
+		550174F4181C088D004FAC30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		550174F6181C088D004FAC30 /* moodmapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = moodmapTests.m; sourceTree = "<group>"; };
+		55017504181C0BBA004FAC30 /* ММFacebookLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ММFacebookLoginViewController.h"; sourceTree = "<group>"; };
+		55017505181C0BBA004FAC30 /* ММFacebookLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ММFacebookLoginViewController.m"; sourceTree = "<group>"; };
+		55017507181C10F9004FAC30 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		55017509181C2961004FAC30 /* ММFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ММFeedViewController.h"; sourceTree = "<group>"; };
+		5501750A181C2961004FAC30 /* ММFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ММFeedViewController.m"; sourceTree = "<group>"; };
+		5501750C181C3052004FAC30 /* ММRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ММRootTabBarController.h"; sourceTree = "<group>"; };
+		5501750D181C3052004FAC30 /* ММRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ММRootTabBarController.m"; sourceTree = "<group>"; };
+		5501750F181C44E3004FAC30 /* ММFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ММFeedCell.h"; sourceTree = "<group>"; };
+		55017510181C44E3004FAC30 /* ММFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ММFeedCell.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		550174C5181C088D004FAC30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55017508181C10F9004FAC30 /* FacebookSDK.framework in Frameworks */,
+				550174CE181C088D004FAC30 /* CoreGraphics.framework in Frameworks */,
+				550174D0181C088D004FAC30 /* UIKit.framework in Frameworks */,
+				550174CC181C088D004FAC30 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		550174E6181C088D004FAC30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550174EB181C088D004FAC30 /* XCTest.framework in Frameworks */,
+				550174ED181C088D004FAC30 /* UIKit.framework in Frameworks */,
+				550174EC181C088D004FAC30 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		550174BF181C088D004FAC30 = {
+			isa = PBXGroup;
+			children = (
+				550174D1181C088D004FAC30 /* moodmap */,
+				550174F0181C088D004FAC30 /* moodmapTests */,
+				550174CA181C088D004FAC30 /* Frameworks */,
+				550174C9181C088D004FAC30 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		550174C9181C088D004FAC30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				550174C8181C088D004FAC30 /* moodmap.app */,
+				550174E9181C088D004FAC30 /* moodmapTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		550174CA181C088D004FAC30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55017507181C10F9004FAC30 /* FacebookSDK.framework */,
+				550174CB181C088D004FAC30 /* Foundation.framework */,
+				550174CD181C088D004FAC30 /* CoreGraphics.framework */,
+				550174CF181C088D004FAC30 /* UIKit.framework */,
+				550174EA181C088D004FAC30 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		550174D1181C088D004FAC30 /* moodmap */ = {
+			isa = PBXGroup;
+			children = (
+				550174DD181C088D004FAC30 /* Main.storyboard */,
+				5501750F181C44E3004FAC30 /* ММFeedCell.h */,
+				55017510181C44E3004FAC30 /* ММFeedCell.m */,
+				5501750C181C3052004FAC30 /* ММRootTabBarController.h */,
+				5501750D181C3052004FAC30 /* ММRootTabBarController.m */,
+				55017509181C2961004FAC30 /* ММFeedViewController.h */,
+				5501750A181C2961004FAC30 /* ММFeedViewController.m */,
+				55017504181C0BBA004FAC30 /* ММFacebookLoginViewController.h */,
+				55017505181C0BBA004FAC30 /* ММFacebookLoginViewController.m */,
+				550174E3181C088D004FAC30 /* Images.xcassets */,
+				550174D2181C088D004FAC30 /* Supporting Files */,
+			);
+			path = moodmap;
+			sourceTree = "<group>";
+		};
+		550174D2181C088D004FAC30 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				550174DA181C088D004FAC30 /* __AppDelegate.h */,
+				550174DB181C088D004FAC30 /* __AppDelegate.m */,
+				550174D3181C088D004FAC30 /* moodmap-Info.plist */,
+				550174D4181C088D004FAC30 /* InfoPlist.strings */,
+				550174D7181C088D004FAC30 /* main.m */,
+				550174D9181C088D004FAC30 /* moodmap-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		550174F0181C088D004FAC30 /* moodmapTests */ = {
+			isa = PBXGroup;
+			children = (
+				550174F6181C088D004FAC30 /* moodmapTests.m */,
+				550174F1181C088D004FAC30 /* Supporting Files */,
+			);
+			path = moodmapTests;
+			sourceTree = "<group>";
+		};
+		550174F1181C088D004FAC30 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				550174F2181C088D004FAC30 /* moodmapTests-Info.plist */,
+				550174F3181C088D004FAC30 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		550174C7181C088D004FAC30 /* moodmap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 550174FA181C088D004FAC30 /* Build configuration list for PBXNativeTarget "moodmap" */;
+			buildPhases = (
+				550174C4181C088D004FAC30 /* Sources */,
+				550174C5181C088D004FAC30 /* Frameworks */,
+				550174C6181C088D004FAC30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = moodmap;
+			productName = moodmap;
+			productReference = 550174C8181C088D004FAC30 /* moodmap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		550174E8181C088D004FAC30 /* moodmapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 550174FD181C088D004FAC30 /* Build configuration list for PBXNativeTarget "moodmapTests" */;
+			buildPhases = (
+				550174E5181C088D004FAC30 /* Sources */,
+				550174E6181C088D004FAC30 /* Frameworks */,
+				550174E7181C088D004FAC30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				550174EF181C088D004FAC30 /* PBXTargetDependency */,
+			);
+			name = moodmapTests;
+			productName = moodmapTests;
+			productReference = 550174E9181C088D004FAC30 /* moodmapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		550174C0181C088D004FAC30 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = "ММ";
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = worldmoodmap;
+				TargetAttributes = {
+					550174E8181C088D004FAC30 = {
+						TestTargetID = 550174C7181C088D004FAC30;
+					};
+				};
+			};
+			buildConfigurationList = 550174C3181C088D004FAC30 /* Build configuration list for PBXProject "moodmap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 550174BF181C088D004FAC30;
+			productRefGroup = 550174C9181C088D004FAC30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				550174C7181C088D004FAC30 /* moodmap */,
+				550174E8181C088D004FAC30 /* moodmapTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		550174C6181C088D004FAC30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550174E4181C088D004FAC30 /* Images.xcassets in Resources */,
+				550174D6181C088D004FAC30 /* InfoPlist.strings in Resources */,
+				550174DF181C088D004FAC30 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		550174E7181C088D004FAC30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550174F5181C088D004FAC30 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		550174C4181C088D004FAC30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5501750B181C2961004FAC30 /* ММFeedViewController.m in Sources */,
+				5501750E181C3052004FAC30 /* ММRootTabBarController.m in Sources */,
+				550174DC181C088D004FAC30 /* __AppDelegate.m in Sources */,
+				55017511181C44E3004FAC30 /* ММFeedCell.m in Sources */,
+				55017506181C0BBA004FAC30 /* ММFacebookLoginViewController.m in Sources */,
+				550174D8181C088D004FAC30 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		550174E5181C088D004FAC30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				550174F7181C088D004FAC30 /* moodmapTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		550174EF181C088D004FAC30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 550174C7181C088D004FAC30 /* moodmap */;
+			targetProxy = 550174EE181C088D004FAC30 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		550174D4181C088D004FAC30 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				550174D5181C088D004FAC30 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		550174DD181C088D004FAC30 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				550174DE181C088D004FAC30 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		550174F3181C088D004FAC30 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				550174F4181C088D004FAC30 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		550174F8181C088D004FAC30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		550174F9181C088D004FAC30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		550174FB181C088D004FAC30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/rputsykovich/Documents/FacebookSDK,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "moodmap/moodmap-Prefix.pch";
+				INFOPLIST_FILE = "moodmap/moodmap-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-lsqlite3.0",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		550174FC181C088D004FAC30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/rputsykovich/Documents/FacebookSDK,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "moodmap/moodmap-Prefix.pch";
+				INFOPLIST_FILE = "moodmap/moodmap-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-lsqlite3.0",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		550174FE181C088D004FAC30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/moodmap.app/moodmap";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "moodmap/moodmap-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "moodmapTests/moodmapTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		550174FF181C088D004FAC30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/moodmap.app/moodmap";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "moodmap/moodmap-Prefix.pch";
+				INFOPLIST_FILE = "moodmapTests/moodmapTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		550174C3181C088D004FAC30 /* Build configuration list for PBXProject "moodmap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				550174F8181C088D004FAC30 /* Debug */,
+				550174F9181C088D004FAC30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		550174FA181C088D004FAC30 /* Build configuration list for PBXNativeTarget "moodmap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				550174FB181C088D004FAC30 /* Debug */,
+				550174FC181C088D004FAC30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		550174FD181C088D004FAC30 /* Build configuration list for PBXNativeTarget "moodmapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				550174FE181C088D004FAC30 /* Debug */,
+				550174FF181C088D004FAC30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 550174C0181C088D004FAC30 /* Project object */;
+}
