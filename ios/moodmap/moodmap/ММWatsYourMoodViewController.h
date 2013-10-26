@@ -1,5 +1,5 @@
 //
-//  ММFeedViewController.h
+//  ММWatsYourMoodViewController.h
 //  moodmap
 //
 //  Created by Roman Putsykovich on 10/26/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface __FeedViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface __WatsYourMoodViewController : UITableViewController
 
 @end

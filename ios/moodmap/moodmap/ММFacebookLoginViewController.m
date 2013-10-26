@@ -19,14 +19,22 @@
 
 static NSString * const FacebookUserName = @"FBUserName";
 static NSString * const FacebookProfileID = @"FBProfileID";
+
 static NSString * const EmailKey = @"email";
 static NSString * const PublishActionsKey = @"publish_actions";
+static NSString * const BasicInfoKey = @"basic_info";
+static NSString * const LocationKey = @"user_location";
+static NSString * const BirthdayKey = @"user_birthday";
+static NSString * const UserLikesKey = @"user_likes";
 
+static NSString * const FriendsBirthdayKey = @"friends_birthday";
+static NSString * const FriendsLocationKey = @"friends_location";
+static NSString * const FriendsHometownKey = @"friends_hometown";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.loginView.publishPermissions = @[PublishActionsKey, EmailKey];
+    self.loginView.publishPermissions = @[PublishActionsKey, BasicInfoKey, FriendsHometownKey, FriendsLocationKey];
     self.loginView.defaultAudience = FBSessionDefaultAudienceFriends;
 }
 
