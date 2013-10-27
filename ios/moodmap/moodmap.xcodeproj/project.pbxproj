@@ -26,6 +26,9 @@
 		5501750E181C3052004FAC30 /* ММRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5501750D181C3052004FAC30 /* ММRootTabBarController.m */; };
 		55017511181C44E3004FAC30 /* ММFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55017510181C44E3004FAC30 /* ММFeedCell.m */; };
 		55017514181C6424004FAC30 /* ММWatsYourMoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55017513181C6424004FAC30 /* ММWatsYourMoodViewController.m */; };
+		55017517181C71D5004FAC30 /* ММMoodHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55017516181C71D5004FAC30 /* ММMoodHistoryViewController.m */; };
+		5501751D181C7567004FAC30 /* ММMoodState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5501751C181C7567004FAC30 /* ММMoodState.m */; };
+		55017520181C89FE004FAC30 /* ММMyStatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5501751F181C89FE004FAC30 /* ММMyStatsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,12 @@
 		55017510181C44E3004FAC30 /* ММFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ММFeedCell.m"; sourceTree = "<group>"; };
 		55017512181C6424004FAC30 /* ММWatsYourMoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ММWatsYourMoodViewController.h"; sourceTree = "<group>"; };
 		55017513181C6424004FAC30 /* ММWatsYourMoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ММWatsYourMoodViewController.m"; sourceTree = "<group>"; };
+		55017515181C71D5004FAC30 /* ММMoodHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ММMoodHistoryViewController.h"; sourceTree = "<group>"; };
+		55017516181C71D5004FAC30 /* ММMoodHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ММMoodHistoryViewController.m"; sourceTree = "<group>"; };
+		5501751B181C7567004FAC30 /* ММMoodState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ММMoodState.h"; sourceTree = "<group>"; };
+		5501751C181C7567004FAC30 /* ММMoodState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ММMoodState.m"; sourceTree = "<group>"; };
+		5501751E181C89FE004FAC30 /* ММMyStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ММMyStatsViewController.h"; sourceTree = "<group>"; };
+		5501751F181C89FE004FAC30 /* ММMyStatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ММMyStatsViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				550174DD181C088D004FAC30 /* Main.storyboard */,
+				5501751B181C7567004FAC30 /* ММMoodState.h */,
+				5501751C181C7567004FAC30 /* ММMoodState.m */,
 				5501750F181C44E3004FAC30 /* ММFeedCell.h */,
 				55017510181C44E3004FAC30 /* ММFeedCell.m */,
 				5501750C181C3052004FAC30 /* ММRootTabBarController.h */,
@@ -139,6 +150,10 @@
 				55017505181C0BBA004FAC30 /* ММFacebookLoginViewController.m */,
 				55017512181C6424004FAC30 /* ММWatsYourMoodViewController.h */,
 				55017513181C6424004FAC30 /* ММWatsYourMoodViewController.m */,
+				55017515181C71D5004FAC30 /* ММMoodHistoryViewController.h */,
+				55017516181C71D5004FAC30 /* ММMoodHistoryViewController.m */,
+				5501751E181C89FE004FAC30 /* ММMyStatsViewController.h */,
+				5501751F181C89FE004FAC30 /* ММMyStatsViewController.m */,
 				550174E3181C088D004FAC30 /* Images.xcassets */,
 				550174D2181C088D004FAC30 /* Supporting Files */,
 			);
@@ -274,12 +289,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55017517181C71D5004FAC30 /* ММMoodHistoryViewController.m in Sources */,
 				5501750B181C2961004FAC30 /* ММFeedViewController.m in Sources */,
+				5501751D181C7567004FAC30 /* ММMoodState.m in Sources */,
 				5501750E181C3052004FAC30 /* ММRootTabBarController.m in Sources */,
 				550174DC181C088D004FAC30 /* __AppDelegate.m in Sources */,
 				55017511181C44E3004FAC30 /* ММFeedCell.m in Sources */,
 				55017506181C0BBA004FAC30 /* ММFacebookLoginViewController.m in Sources */,
 				550174D8181C088D004FAC30 /* main.m in Sources */,
+				55017520181C89FE004FAC30 /* ММMyStatsViewController.m in Sources */,
 				55017514181C6424004FAC30 /* ММWatsYourMoodViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

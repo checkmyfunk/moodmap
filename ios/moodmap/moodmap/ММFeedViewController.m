@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 worldmoodmap. All rights reserved.
 //
 
+#import "ММMoodHistoryViewController.h"
 #import "ММFeedViewController.h"
 #import "ММFeedCell.h"
 #import <FacebookSDK/FacebookSDK.h>
@@ -14,10 +15,13 @@
 
 @property (strong, nonatomic) NSArray *friendsArray;
 @property (strong, nonatomic) IBOutlet UITableView *table;
+@property (weak, nonatomic) IBOutlet UIImageView *moodImage;
 
 @end
 
 @implementation __FeedViewController
+
+static NSString * const MoodImageKey = @"MoodImageKey";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,6 +29,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    if([[NSUserDefaults standardUserDefaults] objectForKey:MoodImageKey]) {
+        self.moodImage.image = [UIImage imageNamed:[[NSUserDefaults standardUserDefaults] objectForKey:MoodImageKey]];
+    }
     
     FBRequest* friendsRequest = [FBRequest requestForMyFriends];
     [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
@@ -39,6 +47,18 @@
            //NSLog(@"I have a friend named %@ with id %@", friend.name, friend.id);
         //}
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    id viewController = [segue destinationViewController];
+      NSIndexPath *path = [self.table indexPathForSelectedRow];
+    
+    if ([segue.identifier isEqualToString:@"moodHistorySegue"]) {
+        if([viewController isKindOfClass:[__MoodHistoryViewController class]]) {
+            __MoodHistoryViewController *mhc = (__MoodHistoryViewController*)viewController;
+            mhc.user = [self.friendsArray objectAtIndex:path.row];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
