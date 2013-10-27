@@ -8,29 +8,7 @@
     ViewBag.Title = "Home Page";
 }
 
-<script type='text/javascript' src='https://www.google.com/jsapi'></script>
 <script type='text/javascript'>
-    google.load('visualization', '1', { 'packages': ['geochart'] });
-    google.setOnLoadCallback(drawRegionsMap);
-
-    function drawRegionsMap() {
-        var data = google.visualization.arrayToDataTable([
-          ['Country', 'Popularity'],
-          ['Germany', 200],
-          ['United States', 300],
-          ['Brazil', 400],
-          ['Canada', 500],
-          ['France', 600],
-          ['RU', 700],
-          ['BY', 600]
-        ]);
-
-        var options = { colorAxis: { colors: ['#00ff00', '#00708F'] } };
-
-        var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    };
-
     function toggleMood() {
         var show = $('#moodChooser').css('display') == 'none';
 
@@ -144,7 +122,11 @@
 </div>
 
 <header>
-    <div class="my-mood">
+    <a class="show-map" href="@Url.Action("Map", "Home")">
+        show map <span class="fa fa-arrow-circle-o-right" style="font-size: 30px;"></span>
+    </a>
+
+    <div class="my-mood" style="clear: both;">
         
         <div id="myMood">
             <div style="float: left;">
@@ -153,17 +135,17 @@
                 <span id="moodName" class="text">@Model.Mood.Name</span>
             </div>
             <div style="float: right;">
-                <span class="fa fa-angle-down" onclick="toggleMood();"></span>
+                <span class="fa fa-angle-down" style="margin-top: -3px;" onclick="toggleMood();"></span>
             </div>
         </div>
         <div id="moodChooser" class="mood-chooser">
           @*  @using (Html.BeginForm("Index", "Home")) {
             @Html.AntiForgeryToken()
 
-            
-                *@<input type="hidden" name="userId" id="hdnUser" value="@Model.UserId" />
-                <input type="hidden" name="moodId" id="hdnMood" />
-                <input type="hidden" name="countryId" id="hdnCountry" />
+             *@
+                <input type="hidden" name="userId" id="hdnUser" value="@Model.UserId" />
+                <input type="hidden" name="moodId" id="hdnMood" value="@Model.Mood.Id" />
+                <input type="hidden" name="countryId" id="hdnCountry" value="@Model.Country.Id" />
                     
                 <div class="combobox">
                     <div id="moodHeader" class="cmb-header" onclick="toggleMoodCombo();">
@@ -203,9 +185,9 @@
 </header>
 
 <article class="users">
-    @if (Model.User.Friends != null && Model.User.Friends.Data != null && Model.User.Friends.Data.Count > 0)
+    @if (Model.Friends != null && Model.Friends.Count > 0)
     {
-        foreach (var myFriend in Model.User.Friends.Data)
+        foreach (var myFriend in Model.Friends)
         {
         <div class="user">
             @if (myFriend.Picture != null && myFriend.Picture.Data != null)
@@ -215,7 +197,18 @@
                 </a>
             }
 
-            <label class="name">@myFriend.Name</label>
+            <div class="info">
+                <label class="name">@myFriend.Name</label>
+                
+                <div class="friend-mood-info">
+                    @if (myFriend.Mood != null) {
+                        <img alt="" src="@myFriend.Mood.Image" />
+                        <label class="friend-mood">@myFriend.Mood.Name</label>
+                    }
+                </div>
+            </div>
+            
+            
         </div>
         }
     }
@@ -223,8 +216,6 @@
     {
         <p>No friends found.</p>
     }
-
-    <div id="chart_div" style="width: 900px; clear: both;"></div>
 </article>
 
 @*@Scripts.Render("~/Scripts/viewmodels/main.js")*@

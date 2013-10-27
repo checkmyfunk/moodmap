@@ -1,0 +1,42 @@
+﻿@using WorldMoodMap.Models
+@model MapModel
+
+@{
+    ViewBag.Title = "Map";
+}
+
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<script type='text/javascript'>
+    google.load('visualization', '1', { 'packages': ['geochart'] });
+    google.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Mood'],
+          @foreach (var country in Model.Countries) {
+            
+             @Html.Raw("['" + country.Name + "', " + country.Score + "],")
+          }
+          //['Germany', 200],
+          //['United States', 300],
+          //['Brazil', 400],
+          //['Canada', 500],
+          //['France', 600],
+          //['RU', 700],
+          //['BY', 600]
+        ]);
+
+        var options = { colorAxis: { colors: ['#00708F', '#00ff00'] } };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    };
+</script>
+
+<header>
+    <a class="home-page" href="@Url.Action("Index", "Home")">
+        <span class="fa fa-arrow-circle-o-left" style="font-size: 30px;"></span> back
+    </a>
+</header>
+
+<div id="chart_div" style="width: 900px; clear: both;"></div>

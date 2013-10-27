@@ -26,7 +26,7 @@ button {
 }
 
 header {
-    background-color: #f5f5f5;
+    background-color: #f8f8f8;
 }
 
     header h1 {
@@ -117,14 +117,33 @@ p {
 }
 
 .user {
+    margin: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
 }
 
+    .user .info {
+        display: inline-block; 
+        vertical-align: top;
+        margin-top: 0;
+    }
+
     .user label.name {
-        font-size: 24px;
+        font-size: 20px;
         vertical-align: top;
     }
 
-    .user .avatar { text-decoration: none; }
+    .user .friend-mood-info {
+        margin-top: 30px;
+    }
+
+    .user .friend-mood {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 18px;
+        margin: 0px 0 0 5px;
+    }
+
+    .user .avatar { text-decoration: none; display: inline-block; margin-right: 5px; }
 
 .button {
     border: none;
@@ -141,12 +160,12 @@ p {
 .button,
 .combobox .cmb-header,
 .cmb-options ul li {
-    background: #eaeaea;
+    background: #efefef;
 }
 
 .button:hover,
 .cmb-options ul li:hover {
-    background: #e5e5e5;
+    background: #eaeaea;
 }
 
 .combobox .cmb-header,
@@ -222,6 +241,16 @@ p {
     #profilePicture img {
         margin: 20px 20px 0 20px;
     }
+
+.show-map {
+    display: inline-block; float: right; height: 20px; font-size: 18px; margin: 5px; cursor: pointer;
+    vertical-align: top;
+}
+
+.home-page {
+    display: inline-block; height: 30px; font-size: 18px; margin: 5px; cursor: pointer;
+    vertical-align: top;
+}
 
 .intro {
     background-color: #ADDDE3;

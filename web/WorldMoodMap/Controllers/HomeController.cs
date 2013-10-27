@@ -22,16 +22,49 @@ namespace WorldMoodMap.Controllers
         {
             User user = Logic.Entities.User.GetById(data.userId);
             user.MoodId = data.moodId;
+
+            Country country = Country.GetById(data.countryId);
+            Country oldCountry = Country.GetById(user.CountryId);
+
             user.CountryId = data.countryId;
             user.Save();
 
-            return Json(new { success = true });
+            RecalculateScore(country, oldCountry);
 
-            //return await LoadView(context);
-            //return await LoadView(context, moodId, countryId);
+            return Json(new { success = true });
         }
 
+        public ActionResult Map()
+        {
+            MapModel model = new MapModel();
+            var availableCountries = Logic.Entities.User.GetAll().Select(x => x.CountryId).Distinct();
+            model.Countries = Country.GetAll().Where(x => availableCountries.Contains(x.Id)).ToList();
 
+            return View(model);
+        }
+
+        private void RecalculateScore(Country country, Country oldCountry)
+        {
+            var countryMood = (
+                from u in Logic.Entities.User.AsQueryable()
+                group u by u.CountryId into g
+                select new { g.Key.Value, Sum = g.Sum(u => u.Mood.Score), Count = g.Count() }
+            ).ToList();
+
+            if (oldCountry != null)
+            {
+                var oldCountryValues = countryMood.Where(x => x.Value == oldCountry.Id).FirstOrDefault();
+                if (oldCountryValues != null)
+                    oldCountry.Score = oldCountryValues.Sum / oldCountryValues.Count;
+                else
+                    oldCountry.Score = null;
+            }
+            oldCountry.Save();
+
+            var countryValues = countryMood.Where(x => x.Value == country.Id).FirstOrDefault();
+            country.Score = countryValues.Sum / countryValues.Count;
+            country.Save();
+        }
 
         private async Task<ActionResult> LoadView(FacebookContext context, string moodId = null, string countryId = null)
         {
@@ -62,6 +95,24 @@ namespace WorldMoodMap.Controllers
                 model.Mood = user.Mood;
                 model.Country = user.Country;
                 model.UserId = user.Id;
+                model.Friends = new List<UserFriend>();
+
+                if (fbuser.Friends != null && fbuser.Friends.Data != null)
+                {
+                    foreach (MyAppUserFriend fbfriend in fbuser.Friends.Data)
+                    {
+                        UserFriend friend = new UserFriend();
+                        friend.Name = fbfriend.Name;
+                        friend.Link = fbfriend.Link;
+                        friend.Picture = fbfriend.Picture;
+                        var friendUser = Logic.Entities.User.GetFirst(x => x.FacebookId == fbfriend.Id);
+                        if (friendUser != null)
+                            friend.Mood = friendUser.Mood;
+                        else
+                            friend.Mood = Mood.GetFirst(x => x.Name == "meh");
+                        model.Friends.Add(friend);
+                    }
+                }
 
                 return View(model);
             }

@@ -16,6 +16,7 @@ namespace Logic
         {
             SetupMoods();
             SetupCountries();
+            SetupTestUsers();
         }
 
         private static void SetupMoods()
@@ -23,7 +24,7 @@ namespace Logic
             Mood mood = new Mood();
             mood.Name = "happy";
             mood.Image = "https://fbstatic-a.akamaihd.net/rsrc.php/v2/ys/r/v5pIg8BgPhs.png";
-            mood.Score = 95;
+            mood.Score = 90;
             mood.Save();
 
             mood = new Mood();
@@ -62,7 +63,7 @@ namespace Logic
             c = new Country("Anguilla", "AI", 100); c.Save();
             c = new Country("Antarctica", "AQ", 100); c.Save();
             c = new Country("Antigua and Barbuda", "AG", 100); c.Save();
-            c = new Country("Argentina", "AR", 100); c.Save();
+            c = new Country("Argentina", "AR", 10); c.Save();
             c = new Country("Armenia", "AM", 100); c.Save();
             c = new Country("Aruba", "AW", 100); c.Save();
             c = new Country("Australia", "AU", 100); c.Save();
@@ -72,7 +73,7 @@ namespace Logic
             c = new Country("Bahrain", "BH", 100); c.Save();
             c = new Country("Bangladesh", "BD", 100); c.Save();
             c = new Country("Barbados", "BB", 100); c.Save();
-            c = new Country("Belarus", "BY", 100); c.Save();
+            c = new Country("Belarus", "BY", 90); c.Save();
             c = new Country("Belgium", "BE", 100); c.Save();
             c = new Country("Belize", "BZ", 100); c.Save();
             c = new Country("Benin", "BJ", 100); c.Save();
@@ -233,7 +234,7 @@ namespace Logic
             c = new Country("Qatar", "QA", 100); c.Save();
             c = new Country("Reunion", "RE", 100); c.Save();
             c = new Country("Romania", "RO", 100); c.Save();
-            c = new Country("Russian Federation", "RU", 100); c.Save();
+            c = new Country("Russian Federation", "RU", 50); c.Save();
             c = new Country("Rwanda", "RW", 100); c.Save();
             c = new Country("Saint Barthelemy", "BL", 100); c.Save();
             c = new Country("Saint Helena", "SH", 100); c.Save();
@@ -283,8 +284,8 @@ namespace Logic
             c = new Country("Uganda", "UG", 100); c.Save();
             c = new Country("Ukraine", "UA", 100); c.Save();
             c = new Country("United Arab Emirates", "AE", 100); c.Save();
-            c = new Country("United Kingdom", "GB", 100); c.Save();
-            c = new Country("United States", "US", 100); c.Save();
+            c = new Country("United Kingdom", "GB", 50); c.Save();
+            c = new Country("United States", "US", 90); c.Save();
             c = new Country("United States Minor Outlying Islands", "UM", 100); c.Save();
             c = new Country("Uruguay", "UY", 100); c.Save();
             c = new Country("Uzbekistan", "UZ", 100); c.Save();
@@ -298,6 +299,46 @@ namespace Logic
             c = new Country("Yemen", "YE", 100); c.Save();
             c = new Country("Zambia", "ZM", 100); c.Save();
             c = new Country("Zimbabwe", "ZW", 100); c.Save();
+        }
+
+        private static void SetupTestUsers()
+        {
+            User u = new User();
+            u.FacebookId = "100006879672036";
+            u.Country = Country.GetFirst(x => x.Name == "Belarus");
+            u.Mood = Mood.GetFirst(x => x.Name == "happy");
+            u.Save();
+
+            u = new User();
+            u.FacebookId = "100006845443384";
+            u.Country = Country.GetFirst(x => x.Name == "Germany");
+            u.Mood = Mood.GetFirst(x => x.Name == "excited");
+            u.Save();
+
+            u = new User();
+            u.FacebookId = "100006893799561";
+            u.Country = Country.GetFirst(x => x.Abbreviation == "RU");
+            u.Mood = Mood.GetFirst(x => x.Name == "meh");
+            u.Save();
+
+            u = new User();
+            u.FacebookId = "100006932678895";
+            u.Country = Country.GetFirst(x => x.Abbreviation == "US");
+            u.Mood = Mood.GetFirst(x => x.Name == "happy");
+            u.Save();
+
+            u = new User();
+            u.FacebookId = "1382994365274121";
+            u.Country = Country.GetFirst(x => x.Abbreviation == "AR");
+            u.Mood = Mood.GetFirst(x => x.Name == "sad");
+            u.Save();
+
+            u = new User();
+            u.FacebookId = "100006854232156";
+            u.Country = Country.GetFirst(x => x.Abbreviation == "GB");
+            u.Mood = Mood.GetFirst(x => x.Name == "meh");
+            u.Save();
+            
         }
     }
 }
