@@ -32,6 +32,8 @@
 		55017523181C9E9D004FAC30 /* ММSpotsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 55017522181C9E9D004FAC30 /* ММSpotsCell.m */; };
 		55017526181C9F10004FAC30 /* ММHappySpotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55017525181C9F10004FAC30 /* ММHappySpotsViewController.m */; };
 		5501752C181CA168004FAC30 /* ММSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = 5501752B181CA168004FAC30 /* ММSpot.m */; };
+		5501752F181CB3B8004FAC30 /* ММMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5501752E181CB3B8004FAC30 /* ММMapViewController.m */; };
+		55017531181CB482004FAC30 /* map.html in Resources */ = {isa = PBXBuildFile; fileRef = 55017530181CB482004FAC30 /* map.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,9 @@
 		55017525181C9F10004FAC30 /* ММHappySpotsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ММHappySpotsViewController.m"; sourceTree = "<group>"; };
 		5501752A181CA168004FAC30 /* ММSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ММSpot.h"; sourceTree = "<group>"; };
 		5501752B181CA168004FAC30 /* ММSpot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ММSpot.m"; sourceTree = "<group>"; };
+		5501752D181CB3B8004FAC30 /* ММMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ММMapViewController.h"; sourceTree = "<group>"; };
+		5501752E181CB3B8004FAC30 /* ММMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ММMapViewController.m"; sourceTree = "<group>"; };
+		55017530181CB482004FAC30 /* map.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = map.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +174,8 @@
 				5501751F181C89FE004FAC30 /* ММMyStatsViewController.m */,
 				55017524181C9F10004FAC30 /* ММHappySpotsViewController.h */,
 				55017525181C9F10004FAC30 /* ММHappySpotsViewController.m */,
+				5501752D181CB3B8004FAC30 /* ММMapViewController.h */,
+				5501752E181CB3B8004FAC30 /* ММMapViewController.m */,
 				550174E3181C088D004FAC30 /* Images.xcassets */,
 				550174D2181C088D004FAC30 /* Supporting Files */,
 			);
@@ -184,6 +191,7 @@
 				550174D4181C088D004FAC30 /* InfoPlist.strings */,
 				550174D7181C088D004FAC30 /* main.m */,
 				550174D9181C088D004FAC30 /* moodmap-Prefix.pch */,
+				55017530181CB482004FAC30 /* map.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -284,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				550174E4181C088D004FAC30 /* Images.xcassets in Resources */,
+				55017531181CB482004FAC30 /* map.html in Resources */,
 				550174D6181C088D004FAC30 /* InfoPlist.strings in Resources */,
 				550174DF181C088D004FAC30 /* Main.storyboard in Resources */,
 			);
@@ -307,6 +316,7 @@
 				55017517181C71D5004FAC30 /* ММMoodHistoryViewController.m in Sources */,
 				5501752C181CA168004FAC30 /* ММSpot.m in Sources */,
 				5501750B181C2961004FAC30 /* ММFeedViewController.m in Sources */,
+				5501752F181CB3B8004FAC30 /* ММMapViewController.m in Sources */,
 				5501751D181C7567004FAC30 /* ММMoodState.m in Sources */,
 				5501750E181C3052004FAC30 /* ММRootTabBarController.m in Sources */,
 				55017523181C9E9D004FAC30 /* ММSpotsCell.m in Sources */,
