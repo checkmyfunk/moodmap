@@ -1,7 +1,28 @@
 ﻿body {
-    font-family: "Segoe UI", Arial;
+    font-family: "Segoe UI", "lucida grande", Arial;
     margin: 0;
     padding: 0;
+}
+
+body ::-webkit-scrollbar { width: 16px; height: 15px; background-color: #eaeaea; }
+body ::-webkit-scrollbar-track { background-clip: padding-box; border: solid transparent; background-color: #eaeaea; }
+body ::-webkit-scrollbar-track :vertical { border-width: 0 0 0 4px; }
+body ::-webkit-scrollbar-track :horizontal { border-width: 4px 0 0 0; }
+body ::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  background-clip: padding-box;
+  border: solid transparent;
+  border-width: 1px 1px 1px 6px;
+  padding: 100px 0 0;
+  box-shadow: inset 1px 1px 0 #999, inset 0 -1px 0 #888;
+}
+body ::-webkit-scrollbar-thumb:vertical { min-height: 28px; }
+body ::-webkit-scrollbar-thumb:horizontal { min-width: 28px; border-width: 1px 1px 5px 1px; border-top: 2px solid transparent; }
+body ::-webkit-scrollbar-corner { background: transparent; background-color: #eaeaea; }
+body ::-webkit-scrollbar-button { display: none; }
+
+button {
+    font-family: "Segoe UI", "lucida grande", Arial
 }
 
 header {
@@ -76,7 +97,6 @@ p {
 }
 
 
-
 #topHeader {
     background-image: url("../images/background.png");
 }
@@ -106,23 +126,94 @@ p {
 
     .user .avatar { text-decoration: none; }
 
-.combobox .cmb-header {
-    background: 
+.button {
+    border: none;
+    padding: 3px 15px 7px 15px;
 }
 
-.combobox .cmb-options {
+.button,
+.combobox .cmb-header,
+.cmb-options ul li {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.button,
+.combobox .cmb-header,
+.cmb-options ul li {
+    background: #eaeaea;
+}
+
+.button:hover,
+.cmb-options ul li:hover {
+    background: #e5e5e5;
+}
+
+.combobox .cmb-header,
+.cmb-options ul li {
+    padding: 5px;
+}
+
+.submit {
+    margin-top: 25px;
+}
+
+.cmb-location {
+    margin-top: 10px;
+}
+
+.combobox .cmb-header {
+    width: 400px;
+    height: 35px;
+    white-space: nowrap;
+}
+
+    .combobox .cmb-header .fa-caret-down {
+        padding-right: 10px;
+    }
+
+.cmb-options {
+    display: none;
+    position: absolute;
+    left: 15px;
+    background-color: green;
+    overflow: auto;
+    height: 235px;
+}
+
+.cmb-options ul { padding: 0; }
+.cmb-options ul, .cmb-options ul li { margin: 0; display: block; }
+
+.cmb-options ul li {
+    list-style-type: none;
+    white-space: nowrap;
+    width: 400px;
+}
+
+.cmb-options .text,
+.combobox .cmb-header .text,
+#myMood .text {
+    display: inline-block;
+    font-size: 24px;
+    vertical-align: top;
+    margin: 0 0 0 5px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#moodOptions .text,
+#moodHeader .text { 
+    width: 300px; 
+}
+
+#countryOptions .text,
+#countryHeader .text { 
+    width: 360px; 
+}
+
+.cmb-options .id {
     display: none;
 }
 
-.combobox .cmb-options ul li {
-    list-style-type: none;
-}
-.combobox .cmb-options .text {
-    display: inline-block;
-    font-size: 12px; font-weight: bold;
-    vertical-align: top;
-    margin: 7px 0 0 5px;
-}
 
 #profilePicture {
     float: left;

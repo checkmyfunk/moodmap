@@ -1,4 +1,5 @@
 ﻿@using WorldMoodMap.Models
+@using Microsoft.AspNet.Mvc.Facebook
 @using Microsoft.AspNet.Mvc.Facebook.Models
 @using Logic.Entities
 
@@ -31,18 +32,116 @@
     };
 
     function toggleMood() {
-        var hide = $('#mood-choser').attr('display') == 'none';
+        var show = $('#moodChooser').css('display') == 'none';
 
-        if (hide) {
+        $('.my-mood').toggleClass('opened');
+        $('.mood-chooser').toggle();
+        $('#myMood').toggle();
 
+        //if (show) {
+            
+        //    $('.mood-chooser').show();
+        //    $('#myMood').hide();
+        //}
+        //else {
+        //    $('.my-mood').addClass('opened');
+        //}
+    };
+
+    function toggleMoodCombo() {
+        var show = $('#moodOptions').css('display') == 'none';
+
+        if (show) {
+            var pos = $('#moodHeader').offset().top + $('#moodHeader').outerHeight();
+
+            $('#moodOptions').css('top', pos + 'px');
+            $('#moodOptions').show();
         }
         else {
-            $('.my-mood').addClass('opened');
-            $('.mood-chooser').show();
-            $('#myMood').hide();
+            $('#moodOptions').hide();
         }
     };
+
+    function toggleCountryCombo() {
+        var show = $('#countryOptions').css('display') == 'none';
+
+        if (show) {
+            var pos = $('#countryHeader').offset().top + $('#countryHeader').outerHeight();
+
+            $('#countryOptions').css('top', pos + 'px');
+            $('#countryOptions').show();
+        }
+        else {
+            $('#countryOptions').hide();
+        }
+    };
+
+    function selectMood(item) {
+        $('#moodName, #moodCmbName').html(item.children('.text').html());
+        $('#moodImage, #moodCmbImage').attr('src', item.children('img').attr('src'));
+        $('#hdnMood').val(item.children('.id').html());
+        toggleMoodCombo();
+    };
+
+    function selectCountry(item) {
+        $('#countryName').html(item.children('.text').html());
+        $('#hdnCountry').val(item.children('.id').html());
+        toggleCountryCombo();
+    };
+
+    function submit() {
+        $('#btnSubmit').hide();
+        $('#btnProgress').show();
+
+        $.ajax({
+            url: '@Url.Content("~/")Home/SaveMood',
+            type: 'POST',
+            data: { userId: $('#hdnUser').val(), moodId: $('#hdnMood').val(), countryId: $('#hdnCountry').val() },
+            dataType: 'json',
+            success: function (result) {
+                if (result.success) {
+                    toggleMood();
+                }
+                else {
+                    $('#btnSubmit').show();
+                    $('#btnProgress').hide();
+                    alert('Can\'t save the data. Please try again.');
+                }
+            },
+            error: function () {
+                $('#btnSubmit').show();
+                $('#btnProgress').hide();
+                alert('Can\'t save the data. Please try again.');
+            }
+        }).done(function () {
+            $('#btnSubmit').show();
+            $('#btnProgress').hide();
+        });
+    };
 </script>
+
+<div id="moodOptions" class="cmb-options">
+    <ul>
+        @foreach (Mood mood in Mood.GetAll()) {
+            <li onclick="selectMood($(this));">
+                <img alt="" src="@mood.Image">
+                <span class="text">@mood.Name</span>
+                <span class="id">@mood.Id</span>
+            </li>
+        }
+    </ul>
+</div>
+
+<div id="countryOptions" class="cmb-options">
+    <ul>
+        @foreach (Country country in Country.GetAll()) {
+            <li onclick="selectCountry($(this));">
+                <span class="text">@country.Name</span>
+                <span class="id">@country.Id</span>
+            </li>
+        }
+    </ul>
+</div>
 
 <header>
     <div class="my-mood">
@@ -50,50 +149,55 @@
         <div id="myMood">
             <div style="float: left;">
                 @*<span class="fa fa-smile-o"></span><span class="my-mood-question">What's your mood?</span>*@
-                <img alt="" src="@Model.Mood.Image" />
-                <span class="text">@Model.Mood.Name</span>
+                <img id="moodImage" alt="" src="@Model.Mood.Image" />
+                <span id="moodName" class="text">@Model.Mood.Name</span>
             </div>
             <div style="float: right;">
                 <span class="fa fa-angle-down" onclick="toggleMood();"></span>
             </div>
         </div>
-        <div class="mood-chooser">
-            @using (Html.BeginForm("Index", "Home")) {
+        <div id="moodChooser" class="mood-chooser">
+          @*  @using (Html.BeginForm("Index", "Home")) {
             @Html.AntiForgeryToken()
-            
-                <div class="combobox">
-                    <div class="cmb-header">
-                        <img alt="" src="@Model.Mood.Image" />
-                        <span class="text">@Model.Mood.Name</span>
-                    </div>
-                    <div class="cmb-options">
-                        <ul>
-                            @foreach (Mood mood in Mood.GetAll()) {
-                                <li>
-                                    <img alt="" src="@mood.Image">
-                                    <span class="text">@mood.Name</span>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                </div>
-                <div class="combobox">
-                    <div class="cmb-header">
 
+            
+                *@<input type="hidden" name="userId" id="hdnUser" value="@Model.UserId" />
+                <input type="hidden" name="moodId" id="hdnMood" />
+                <input type="hidden" name="countryId" id="hdnCountry" />
+                    
+                <div class="combobox">
+                    <div id="moodHeader" class="cmb-header" onclick="toggleMoodCombo();">
+                        <div style="float: left;">
+                            <img id="moodCmbImage" alt="" src="@Model.Mood.Image" />
+                            <span id="moodCmbName" class="text">@Model.Mood.Name</span>
+                        </div>
+                        <div style="float: right;">
+                            <span class="fa fa-caret-down"></span>
+                        </div>
                     </div>
-                    <div class="cmb-options">
-                        <ul>
-                            @foreach (Country country in Country.GetAll()) {
-                                <li>
-                                    <span class="text">@country.Name</span>
-                                </li>
-                            }
-                        </ul>
-                    </div>
+                    
                 </div>
-                <button type="submit" class="button">Submit</button>
-                <button type="button" class="button" onclick="toggleMood();">Cancel</button>
-            }
+                
+                <div class="combobox cmb-location">
+                    <div id="countryHeader" class="cmb-header" onclick="toggleCountryCombo();">
+                        <div style="float: left;">
+                            <span id="countryName" class="text">@Model.Country.Name</span>
+                        </div>
+                        <div style="float: right;">
+                            <span class="fa fa-caret-down"></span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <button id="btnSubmit" class="button submit" type="button" onclick="submit();">
+                    <span class="fa fa-check"></span> submit
+                </button>
+                <button id="btnProgress" class="button submit" type="button" style="display: none;">
+                    <span class="fa fa-spinner fa-spin"></span> please wait
+                </button>
+                @*<button type="button" class="button" onclick="toggleMood();">cancel</button>*@
+          @*  }*@
         </div>
     </div>
 </header>

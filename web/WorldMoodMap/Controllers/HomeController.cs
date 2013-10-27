@@ -14,6 +14,27 @@ namespace WorldMoodMap.Controllers
         [FacebookAuthorize("email", "user_photos")]
         public async Task<ActionResult> Index(FacebookContext context)
         {
+            return await LoadView(context);
+        }
+
+        [HttpPost]
+        public ActionResult SaveMood(MoodDTO data)
+        {
+            User user = Logic.Entities.User.GetById(data.userId);
+            user.MoodId = data.moodId;
+            user.CountryId = data.countryId;
+            user.Save();
+
+            return Json(new { success = true });
+
+            //return await LoadView(context);
+            //return await LoadView(context, moodId, countryId);
+        }
+
+
+
+        private async Task<ActionResult> LoadView(FacebookContext context, string moodId = null, string countryId = null)
+        {
             if (ModelState.IsValid)
             {
                 var fbuser = await context.Client.GetCurrentUserAsync<MyAppUser>();
@@ -29,10 +50,18 @@ namespace WorldMoodMap.Controllers
                     user.Save();
                 }
 
+                if (!string.IsNullOrEmpty(moodId))
+                {
+                    user.Mood = Mood.GetById(int.Parse(moodId));
+                    user.Country = Country.GetById(int.Parse(countryId));
+                    user.Save();
+                }
+
                 HomeModel model = new HomeModel();
                 model.User = fbuser;
                 model.Mood = user.Mood;
                 model.Country = user.Country;
+                model.UserId = user.Id;
 
                 return View(model);
             }

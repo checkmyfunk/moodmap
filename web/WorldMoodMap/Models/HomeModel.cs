@@ -11,5 +11,6 @@ namespace WorldMoodMap.Models
         public MyAppUser User { get; set; }
         public Mood Mood { get; set; }
         public Country Country { get; set; }
+        public int UserId { get; set; }
     }
 }
